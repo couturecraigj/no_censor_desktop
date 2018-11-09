@@ -61,7 +61,7 @@ typings/
 .next
 
 /public/
-/files/
+/files
 /temp/
 /server/
 /dist/
