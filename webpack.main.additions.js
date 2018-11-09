@@ -1,29 +1,38 @@
+const TodoWebpackPlugin = require('todo-webpack-plugin');
+
 module.exports = {
   resolve: {
     extensions: [
-      ".webpack.js",
-      ".web.js",
-      ".js",
-      ".ts",
-      "/index.ts",
-      "/index.tsx",
-      ".tsx",
-      ".json",
-      ".jsx"
+      '.webpack.js',
+      '.web.js',
+      '.js',
+      '.ts',
+      '/index.ts',
+      '/index.tsx',
+      '.tsx',
+      '.json',
+      '.jsx'
     ]
   },
   module: {
     rules: [
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: "eslint-loader"
+        loader: 'eslint-loader'
       },
       {
         test: /\.jsx?$/,
-        use: "babel-loader"
+        use: 'babel-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new TodoWebpackPlugin({
+      console: true,
+      reporter: 'markdown',
+      filename: 'TODO.MAIN.md'
+    })
+  ]
 };

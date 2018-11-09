@@ -19,7 +19,7 @@ async function createMainWindow() {
   if (!isDevelopment) {
     ipcMain.on('ondragstart', (event, files) => {
       event.sender.startDrag({
-        icon: `${__static}/origami_butterfly_by_fotland-d8poemn.jpg`,
+        icon: `${__static}/inbox-outline.png`,
         file: files
       });
     });

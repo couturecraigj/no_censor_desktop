@@ -91,6 +91,7 @@
       {
         "devDependencies": [
           "**/mocks/**/*.js",
+          "**/webpack.*.js",
           "**/__mocks__/**/*.js",
           "**/*.test.js",
           "test_utilities/**/*.js",
