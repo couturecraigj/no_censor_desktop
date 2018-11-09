@@ -1,0 +1,112 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended",
+    "stylelint"
+  ],
+  "globals": {
+    "__static": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "typescript": true,
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      null,
+      {
+        "usePrettierrc": true
+      }
+    ],
+    // "import/external-module-folders": [2, ["node_modules", "src/common"]],
+    "jsx-a11y/label-has-associated-control": [2, {
+      // "labelComponents": ["CustomLabel"],
+      "labelAttributes": ["htmlFor"],
+      // "controlComponents": ["CustomInput"],
+      "depth": 3,
+    }],
+    "node/no-unpublished-require": "off",
+    "node/no-unsupported-features": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "node/no-missing-require": [
+      "error",
+      {
+        "allowModules": [],
+        "resolvePaths": [],
+        "tryExtensions": [
+          ".js",
+          ".jsx",
+          ".json",
+          ".node"
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": [
+          "Label"
+        ],
+        "required": {
+          "every": [
+            "nesting",
+            "id"
+          ]
+        },
+        "allowChildren": true
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "to",
+          "hrefLeft",
+          "hrefRight"
+        ],
+        "aspects": [
+          "noHref",
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/mocks/**/*.js",
+          "**/__mocks__/**/*.js",
+          "**/*.test.js",
+          "test_utilities/**/*.js",
+          "**/*.dev.js",
+          "**/dev.js",
+          "**/*.test.jsx",
+          "**/*.spec.js",
+          "**/*.spec.jsx",
+          "**/tools/jest/*.js",
+          "**/utilities/**/*.js",
+          "jest.setup.js",
+          "tools/**/*.js",
+          "/gulpfile.js",
+          "**/mocks.js"
+        ]
+      }
+    ]
+  }
+}

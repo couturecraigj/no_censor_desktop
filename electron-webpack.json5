@@ -1,0 +1,18 @@
+{
+  // commonSourceDirectory: "src/common",
+  title: "Anti-FB",
+  // whiteListedModules: ["foo-ui-library"],
+
+  main: {
+    // extraEntries: ["@/preload.js"],
+    webpackConfig: "webpack.main.additions.js",
+    sourceDirectory: "src/main"
+  },
+
+  renderer: {
+    // WebpackDllConfig: "custom.webpackDll.additions.js",
+    dll: ["socket.io-client", "react", "react-dom"],
+    webpackConfig: "webpack.renderer.additions.js",
+    sourceDirectory: "src/renderer"
+  }
+}

@@ -1,0 +1,82 @@
+{
+    "name": "censor-free",
+    "version": "1.0.0",
+    "description": "What could possibly go wrong",
+    "main": "index.js",
+    "scripts": {
+        "clean:install": "npm run clean && npm install && npm run lint:fix",
+        "clean": "rm -rf package-lock.json node_modules dist",
+        "compile:dll": "electron-webpack dll",
+        "compile": "electron-webpack",
+        "dist:dir": "npm run dist --dir -c.compression=store -c.mac.identity=null",
+        "dist": "npm run compile && electron-builder",
+        "lint:fix": "eslint \"src/**\" --fix",
+        "postinstall": "npm run compile:dll",
+        "rebuild-deps": "electron-builder install-app-deps",
+        "start": "electron-webpack dev",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/couturecraigj/censor-free.git"
+    },
+    "author": "Craig Couture <craigjcouture@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/couturecraigj/censor-free/issues"
+    },
+    "engines": {
+        "node": "8.12.0"
+    },
+    "homepage": "https://github.com/couturecraigj/censor-free#readme",
+    "dependencies": {
+        "apollo-cache-inmemory": "^1.3.8",
+        "apollo-client": "^2.4.5",
+        "apollo-link": "^1.2.3",
+        "apollo-link-context": "^1.0.9",
+        "apollo-link-error": "^1.1.1",
+        "apollo-link-http": "^1.5.5",
+        "apollo-link-ws": "^1.0.9",
+        "apollo-utilities": "^1.0.25",
+        "electron-fetch": "^1.2.1",
+        "electron-store": "^2.0.0",
+        "formik": "^1.3.1",
+        "graphql": "^14.0.2",
+        "graphql-tag": "^2.10.0",
+        "mkdir-recursive": "^0.4.0",
+        "prop-types": "^15.6.2",
+        "react": "^16.6.0",
+        "react-apollo": "^2.2.4",
+        "react-dom": "^16.6.0",
+        "react-hot-loader": "^4.3.11",
+        "react-router-dom": "^4.3.1",
+        "socket.io": "^2.1.1",
+        "socket.io-client": "^2.1.1",
+        "source-map-support": "^0.5.9",
+        "styled-components": "^4.0.3",
+        "subscriptions-transport-ws": "^0.9.15",
+        "through2": "^2.0.3"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.1.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+        "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+        "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+        "@babel/preset-react": "^7.0.0",
+        "babel-eslint": "^10.0.1",
+        "electron": "^2.0.7",
+        "electron-builder": "^20.28.1",
+        "electron-webpack": "^2.1.2",
+        "eslint": "^5.8.0",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^3.1.0",
+        "eslint-config-stylelint": "^9.0.0",
+        "eslint-loader": "^2.1.1",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.2",
+        "eslint-plugin-prettier": "^3.0.0",
+        "eslint-plugin-react": "^7.11.1",
+        "prettier": "^1.14.3",
+        "webpack": "^4.16.5"
+    }
+}
