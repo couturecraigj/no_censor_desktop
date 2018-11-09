@@ -61,6 +61,8 @@ typings/
 .next
 
 /public/
+/files/
+/temp/
 /server/
 /dist/
 /webpack-assets.json
