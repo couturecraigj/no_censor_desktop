@@ -1,2 +1,7 @@
 # no_censor_desktop
-This is a potential way of controlling personal information
+
+**_THIS IS A WORK IN PROGRESS_**
+
+## Purpose
+
+I think it is about time that somebody think of a way to keep my information out of the big bad corporations hands.
